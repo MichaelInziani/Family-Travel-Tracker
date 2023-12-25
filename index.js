@@ -49,12 +49,13 @@ app.get("/", async (req, res) => {
   const currentUser = await getCurrentUser();
 
   res.render("index.ejs", {
-    countries: countries,
+     countries: countries, 
     total: countries.length,
     users: users,
     color: currentUser.color,
   });
 });
+
 
 /*
 app.post("/add", async (req, res) => {
@@ -108,6 +109,8 @@ app.post("/add", async (req, res) => {
       res.render("index.ejs", {
         countries: countries,
         total: countries.length,
+        users: users,
+        color: currentUser.color,
         error: "Country has already been added, try again.",
       });
     }
@@ -117,6 +120,8 @@ app.post("/add", async (req, res) => {
     res.render("index.ejs", {
       countries: countries,
       total: countries.length,
+      users: users,
+      color: currentUser.color,
       error: "Country name does not exist, try again.",
     });
   }
